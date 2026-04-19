@@ -309,6 +309,22 @@ otus  special_small_blocks  0                      default
 
 ### 3. Работа со снапшотом, поиск сообщения от преподавателя
 
+```
+# качаем файл
+wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download
+
+
+# Восстановим файловую систему из снапшота:
+zfs receive otus/test@today < otus_task2.file
+
+#Нашли файл
+root@lp-ubn1:/home/sadmin# find /otus/test/ -name "secret_message"
+/otus/test/task1/file_mess/secret_message
+
+
+```
+
+
 
 
 
